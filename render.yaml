@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: classic-alterations
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: TAILOR_PHONE
+        value: "+17348587922"
+      - key: TAILOR_EMAIL
+        value: "nsabbagh83@gmail.com"
+      - key: PORT
+        value: "10000"

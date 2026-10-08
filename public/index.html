@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classic Alterations | Schedule a Fitting</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    
+    <!-- HEADER -->
+    <header class="studio-header">
+      <div class="brand-badge">
+        <span class="icon">✂️</span>
+        <span>EXPERT TAILORING & ALTERATIONS</span>
+      </div>
+      <h1 class="brand-title">Classic Alterations</h1>
+      <p class="brand-subtitle">Schedule your personal fitting appointment. Precision alterations, bespoke fittings, and care for every garment.</p>
+      
+      <div class="studio-perks">
+        <div class="perk-pill">
+          <span class="dot"></span> Direct Google Calendar Sync
+        </div>
+        <div class="perk-pill">
+          <span class="dot"></span> Instant SMS Confirmation
+        </div>
+        <div class="perk-pill">
+          <span class="dot"></span> Quick Turnaround
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN BOOKING CARD -->
+    <main class="booking-card" id="bookingCard">
+      <div class="card-header">
+        <h2>Book Your Fitting</h2>
+        <p>Fill out the details below. We'll secure your time slot on our calendar right away.</p>
+      </div>
+
+      <form id="bookingForm" class="booking-form" novalidate>
+        
+        <!-- SECTION 1: CUSTOMER INFO -->
+        <div class="form-section">
+          <div class="section-title">
+            <span class="step-num">1</span>
+            <h3>Customer Contact Information</h3>
+          </div>
+
+          <div class="form-grid">
+            <div class="form-group full-width">
+              <label for="fullName">Full Name <span class="required">*</span></label>
+              <div class="input-wrapper">
+                <span class="field-icon">👤</span>
+                <input type="text" id="fullName" name="fullName" placeholder="e.g. Sarah Jenkins" required>
+              </div>
+              <span class="error-msg" id="fullNameError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number (Mobile) <span class="required">*</span></label>
+              <div class="input-wrapper">
+                <span class="field-icon">📱</span>
+                <input type="tel" id="phone" name="phone" placeholder="(734) 555-0199" required>
+              </div>
+              <span class="help-text">You'll receive appointment reminders here</span>
+              <span class="error-msg" id="phoneError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address <span class="optional">(Optional)</span></label>
+              <div class="input-wrapper">
+                <span class="field-icon">✉️</span>
+                <input type="email" id="email" name="email" placeholder="sarah@example.com">
+              </div>
+              <span class="help-text">For calendar invites & updates</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: SERVICE SELECTION -->
+        <div class="form-section">
+          <div class="section-title">
+            <span class="step-num">2</span>
+            <h3>Select Service / Garment Type</h3>
+          </div>
+
+          <div class="service-chips-grid" id="serviceChips">
+            <label class="service-card selected">
+              <input type="radio" name="service" value="Pants / Jeans / Skirt Hemming" checked>
+              <div class="card-content">
+                <span class="service-emoji">👖</span>
+                <span class="service-name">Pants & Skirt Hemming</span>
+                <span class="service-desc">Length adjustment, original hem, cuffs</span>
+              </div>
+            </label>
+
+            <label class="service-card">
+              <input type="radio" name="service" value="Suit, Tuxedo & Jacket Tailoring">
+              <div class="card-content">
+                <span class="service-emoji">🧥</span>
+                <span class="service-name">Suits & Blazers</span>
+                <span class="service-desc">Sleeves, shoulders, waist suppression</span>
+              </div>
+            </label>
+
+            <label class="service-card">
+              <input type="radio" name="service" value="Bridal & Evening Gown Alterations">
+              <div class="card-content">
+                <span class="service-emoji">👗</span>
+                <span class="service-name">Bridal & Evening Gowns</span>
+                <span class="service-desc">Bodice fitting, bustles, delicate hems</span>
+              </div>
+            </label>
+
+            <label class="service-card">
+              <input type="radio" name="service" value="Waist & Tapering Adjustments">
+              <div class="card-content">
+                <span class="service-emoji">🪡</span>
+                <span class="service-name">Waist & Tapering</span>
+                <span class="service-desc">Take in / let out waist, slim leg taper</span>
+              </div>
+            </label>
+
+            <label class="service-card">
+              <input type="radio" name="service" value="Zipper, Button & Lining Repair">
+              <div class="card-content">
+                <span class="service-emoji">⚡</span>
+                <span class="service-name">Repairs & Relining</span>
+                <span class="service-desc">Zipper replacement, tears, lining fixes</span>
+              </div>
+            </label>
+
+            <label class="service-card">
+              <input type="radio" name="service" value="Custom Fitting / Other Alteration">
+              <div class="card-content">
+                <span class="service-emoji">✂️</span>
+                <span class="service-name">Custom Fitting / Other</span>
+                <span class="service-desc">Consultation for custom work or vintage</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- SECTION 3: DATE & TIME -->
+        <div class="form-section">
+          <div class="section-title">
+            <span class="step-num">3</span>
+            <h3>Choose Date & Time</h3>
+          </div>
+
+          <div class="date-time-grid">
+            <div class="form-group">
+              <label for="appointmentDate">Appointment Date <span class="required">*</span></label>
+              <div class="input-wrapper">
+                <span class="field-icon">📅</span>
+                <input type="date" id="appointmentDate" name="appointmentDate" required>
+              </div>
+              <span class="error-msg" id="dateError"></span>
+            </div>
+
+            <div class="form-group full-width">
+              <label>Select Preferred Time Slot <span class="required">*</span></label>
+              
+              <div class="time-period-group">
+                <span class="period-label">Morning</span>
+                <div class="time-slots">
+                  <button type="button" class="time-btn" data-time="10:00 AM">10:00 AM</button>
+                  <button type="button" class="time-btn" data-time="11:00 AM">11:00 AM</button>
+                  <button type="button" class="time-btn" data-time="11:30 AM">11:30 AM</button>
+                </div>
+              </div>
+
+              <div class="time-period-group">
+                <span class="period-label">Afternoon</span>
+                <div class="time-slots">
+                  <button type="button" class="time-btn" data-time="1:00 PM">1:00 PM</button>
+                  <button type="button" class="time-btn" data-time="2:00 PM">2:00 PM</button>
+                  <button type="button" class="time-btn selected" data-time="2:30 PM">2:30 PM</button>
+                  <button type="button" class="time-btn" data-time="3:30 PM">3:30 PM</button>
+                  <button type="button" class="time-btn" data-time="4:30 PM">4:30 PM</button>
+                </div>
+              </div>
+
+              <div class="time-period-group">
+                <span class="period-label">Early Evening</span>
+                <div class="time-slots">
+                  <button type="button" class="time-btn" data-time="5:30 PM">5:30 PM</button>
+                  <button type="button" class="time-btn" data-time="6:00 PM">6:00 PM</button>
+                </div>
+              </div>
+
+              <input type="hidden" id="selectedTime" name="selectedTime" value="2:30 PM">
+              <span class="error-msg" id="timeError"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 4: NOTES -->
+        <div class="form-section">
+          <div class="section-title">
+            <span class="step-num">4</span>
+            <h3>Garment Details & Notes <span class="optional">(Optional)</span></h3>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="notes">Tell us about your garment or deadlines</label>
+            <textarea id="notes" name="notes" rows="3" placeholder="e.g. Taking in waist on 2 suits for a wedding on Nov 15th, bringing shoes for fitting."></textarea>
+          </div>
+        </div>
+
+        <!-- SUBMIT BUTTON -->
+        <div class="form-footer">
+          <button type="submit" class="submit-btn" id="submitBtn">
+            <span class="btn-text">Confirm Appointment</span>
+            <span class="btn-spinner" style="display: none;"></span>
+          </button>
+          <p class="privacy-note">🔒 We respect your privacy. Your information is securely dispatched to our calendar and SMS reminder system.</p>
+        </div>
+
+      </form>
+    </main>
+
+    <!-- SUCCESS CONFIRMATION MODAL / CARD -->
+    <div class="confirmation-card" id="confirmationCard" style="display: none;">
+      <div class="success-icon-wrap">
+        <div class="check-circle">✓</div>
+      </div>
+      <h2>Appointment Confirmed!</h2>
+      <p class="conf-lead">Thank you, <strong id="confClientName"></strong>. Your fitting has been reserved on our schedule.</p>
+
+      <div class="receipt-box">
+        <div class="receipt-row">
+          <span class="r-label">Service</span>
+          <span class="r-value" id="confService"></span>
+        </div>
+        <div class="receipt-row">
+          <span class="r-label">Date</span>
+          <span class="r-value" id="confDate"></span>
+        </div>
+        <div class="receipt-row">
+          <span class="r-label">Time</span>
+          <span class="r-value" id="confTime"></span>
+        </div>
+        <div class="receipt-row">
+          <span class="r-label">Phone</span>
+          <span class="r-value" id="confPhone"></span>
+        </div>
+      </div>
+
+      <div class="actions-group">
+        <a id="addToCalendarLink" href="#" target="_blank" rel="noopener noreferrer" class="calendar-btn">
+          <span class="gcal-icon">📅</span> Add to Your Google Calendar
+        </a>
+        <button type="button" class="secondary-btn" id="bookAnotherBtn">Book Another Appointment</button>
+      </div>
+
+      <div class="tailor-notice-box">
+        <p><strong>Tailor Contact & Studio Info:</strong></p>
+        <p>Phone / Text: <a href="tel:+17348587922">+1 (734) 858-7922</a></p>
+        <p>Email: <a href="mailto:nsabbagh83@gmail.com">nsabbagh83@gmail.com</a></p>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="app-footer">
+      <p>© 2026 Classic Alterations. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#adminModal" id="viewAppointmentsLink">📋 View Recent Appointments (Classic Alterations Staff)</a>
+      </div>
+    </footer>
+
+    <!-- RECENT APPOINTMENTS MODAL (FOR TAILOR REVIEW) -->
+    <div class="modal-overlay" id="adminModal" style="display: none;">
+      <div class="modal-box">
+        <div class="modal-header">
+          <h3>Recent Booked Appointments</h3>
+          <button type="button" class="close-modal-btn" id="closeAdminModal">&times;</button>
+        </div>
+        <div class="modal-body" id="adminModalContent">
+          <p class="loading-text">Loading appointments...</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
